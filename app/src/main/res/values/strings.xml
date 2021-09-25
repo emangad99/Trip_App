@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trip_App</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="check1">Remember me</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+</resources>
