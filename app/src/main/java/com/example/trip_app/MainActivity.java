@@ -33,7 +33,9 @@ TextView txtregister;
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent homeIntent = new Intent (MainActivity.this,HomeActivity.class);
 
+                startActivity(homeIntent);
             }
         });
 
