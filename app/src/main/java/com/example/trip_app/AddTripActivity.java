@@ -11,8 +11,10 @@ import android.text.format.DateFormat;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -22,10 +24,12 @@ import java.util.Date;
 public class AddTripActivity extends AppCompatActivity {
 ImageView imagcalender;
 TextView txtcalender;
-
 ImageView imagalarm;
 TextView txtalarm;
 int t1Hour,t1Minute;
+
+private Spinner spinnertxt1;
+private Spinner spinnertxt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,8 @@ int t1Hour,t1Minute;
         setContentView(R.layout.activity_add_trip);
         getSupportActionBar().hide();
 
+        spinnertxt1=findViewById(R.id.spinner_txt1);
+        spinnertxt2=findViewById(R.id.spinner_txt2);
 
         imagcalender=findViewById(R.id.imag_calender);
         txtcalender=findViewById(R.id.txt_calender);
@@ -90,5 +96,15 @@ int t1Hour,t1Minute;
                 timePickerDialog.show();
             }
         });
+
+        String[] txtrepeat = getResources().getStringArray(R.array.Repeat);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,txtrepeat);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnertxt1.setAdapter(adapter);
+
+        String[] txttrip = getResources().getStringArray(R.array.trip);
+        ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,txttrip);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnertxt2.setAdapter(adapter2);
     }
 }

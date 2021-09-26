@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Repeat">
+        <item>No Repeat</item>
+        <item>Repeat Daily</item>
+        <item>Repeat Weekly</item>
+        <item>Repeat Monthly</item>
+    </string-array>
+
+    <string-array name="trip">
+        <item>On Way Trip</item>
+        <item>Round Trip</item>
+    </string-array>
+
+</resources>

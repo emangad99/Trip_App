@@ -140,4 +140,34 @@
         app:layout_constraintStart_toEndOf="@+id/txt_calender"
         app:layout_constraintTop_toBottomOf="@+id/imag_alarm" />
 
+    <Spinner
+        android:id="@+id/spinner_txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_calender" />
+
+    <Spinner
+        android:id="@+id/spinner_txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toEndOf="@+id/spinner_txt1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_alarm" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF9EF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_txt1"
+        app:srcCompat="@drawable/btn_add_trip" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
