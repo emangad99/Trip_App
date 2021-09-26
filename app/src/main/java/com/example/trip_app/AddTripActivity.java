@@ -4,22 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
-import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class AddTripActivity extends AppCompatActivity {
 ImageView imagcalender;
 TextView txtcalender;
+
+ImageView imagalarm;
+TextView txtalarm;
+int t1Hour,t1Minute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,8 @@ TextView txtcalender;
 
         imagcalender=findViewById(R.id.imag_calender);
         txtcalender=findViewById(R.id.txt_calender);
+        imagalarm=findViewById(R.id.imag_alarm);
+        txtalarm=findViewById(R.id.txt_alarm);
 
         Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
@@ -58,6 +66,28 @@ TextView txtcalender;
                 },year,month,day);
                 datePickerDialog.show();
 
+            }
+        });
+
+        imagalarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(
+                        AddTripActivity.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                t1Hour = hourOfDay;
+                                t1Minute=minute;
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(0,0,0,t1Hour,t1Minute);
+                                txtalarm.setText(DateFormat.format("hh:mm aa",calendar));
+
+                            }
+                        },12,0,false
+                );
+                timePickerDialog.updateTime(t1Hour,t1Minute);
+                timePickerDialog.show();
             }
         });
     }
