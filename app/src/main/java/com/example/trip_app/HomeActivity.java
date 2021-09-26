@@ -48,9 +48,9 @@ ImageView imageMenu;
         imagadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent loginIntent = new Intent (HomeActivity.this,MainActivity.class);
+               Intent addIntent = new Intent (HomeActivity.this,AddTripActivity.class);
 
-               // startActivity(loginIntent);
+               startActivity(addIntent);
             }
         });
 

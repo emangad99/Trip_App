@@ -7,4 +7,7 @@
     <string name="phone">Phone</string>
     <string name="Upcoming_trips">Upcoming \n trips</string>
     <string name="round_trip">"Round Trip "</string>
+    <string name="Trip_Name">Trip Name</string>
+    <string name="already_nhave_an_naccount">Already \nhave an \nAccount?</string>
+    <string name="Start_Point">Start Point</string>
 </resources>
