@@ -53,15 +53,15 @@ EditText email,password;
             }
         });
 
-btnlogin.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent logIntent = new Intent (MainActivity.this,HomeActivity.class);
+      btnlogin.setOnClickListener(new View.OnClickListener() {
+         @Override
+        public void onClick(View v) {
+            Intent logIntent = new Intent (MainActivity.this,HomeActivity.class);
 
-        startActivity(logIntent);
+            startActivity(logIntent);
 
-    }
-});
+          }
+      });
 
     }
 }
