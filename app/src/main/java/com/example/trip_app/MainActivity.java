@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 ImageButton btnlogin;
 TextView txtregister;
 EditText email,password;
-FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,15 @@ FirebaseAuth mAuth;
             }
         });
 
+btnlogin.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent logIntent = new Intent (MainActivity.this,HomeActivity.class);
 
+        startActivity(logIntent);
+
+    }
+});
 
     }
 }
