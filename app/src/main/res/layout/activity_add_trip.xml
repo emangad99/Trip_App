@@ -61,16 +61,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_start_point" />
 
-    <SearchView
+    <EditText
         android:id="@+id/search_start_point"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_start_point" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_start_point"/>
 
-    <SearchView
+    <EditText
         android:id="@+id/search_end_point"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_alarm" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btn_add_trip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFF9EF"
