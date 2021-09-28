@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <EditText
+        android:id="@+id/edit_add_notes"
+        android:background="@color/browser_actions_bg_grey"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Add your notes"
+        android:paddingLeft="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"/>
+    <ImageView
+        android:id="@+id/image_remove"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_close"
+        android:tint="@color/common_google_signin_btn_text_dark_focused"/>
+
+
+
+</LinearLayout>
