@@ -1,10 +1,8 @@
 package com.example.trip_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -13,13 +11,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Calendar;
-import java.util.Date;
 
 public class AddTripActivity extends AppCompatActivity {
 ImageView imagcalender;
@@ -30,6 +30,8 @@ int t1Hour,t1Minute;
 
 private Spinner spinnertxt1;
 private Spinner spinnertxt2;
+
+ImageButton addtrip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ private Spinner spinnertxt2;
         txtcalender=findViewById(R.id.txt_calender);
         imagalarm=findViewById(R.id.imag_alarm);
         txtalarm=findViewById(R.id.txt_alarm);
+        addtrip=findViewById(R.id.add_trip);
 
         Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
@@ -106,5 +109,14 @@ private Spinner spinnertxt2;
         ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,txttrip);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnertxt2.setAdapter(adapter2);
+
+        addtrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addintent = new Intent (AddTripActivity.this,List_view.class);
+
+                startActivity(addintent);
+            }
+        });
     }
 }
