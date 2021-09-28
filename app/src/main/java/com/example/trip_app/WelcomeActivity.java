@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
+
     private static int SPLASH_TIME_OUT = 2000;
 
     @Override
