@@ -113,9 +113,7 @@ ImageButton addtrip;
         addtrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addintent = new Intent (AddTripActivity.this,List_view.class);
 
-                startActivity(addintent);
             }
         });
     }
