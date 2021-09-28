@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/edit_txt_email"
+        android:id="@+id/txtEmailLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/edit_txt_password"
+        android:id="@+id/txtPassLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toEndOf="@+id/txt_password"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_email" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailLog" />
 
     <TextView
         android:id="@+id/txt_password"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_email" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailLog" />
 
     <ImageButton
         android:id="@+id/btn_login"
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_password"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassLog"
         app:srcCompat="@drawable/btn_login" />
 
     <TextView
@@ -147,7 +147,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView5" />
 
     <ImageView
-        android:id="@+id/icon_face"
+        android:id="@+id/btnFaceLog"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="124dp"
@@ -158,7 +158,7 @@
         app:srcCompat="@drawable/icon_face" />
 
     <ImageView
-        android:id="@+id/icon_google"
+        android:id="@+id/btnGoogleLog"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="128dp"
@@ -166,7 +166,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/icon_face"
+        app:layout_constraintStart_toEndOf="@+id/btnFaceLog"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.265"
         app:srcCompat="@drawable/icon_google" />
@@ -181,7 +181,7 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_password"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassLog"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
