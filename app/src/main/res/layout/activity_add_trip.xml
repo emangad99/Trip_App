@@ -68,7 +68,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_start_point"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_start_point" />
 
     <EditText
         android:id="@+id/search_end_point"
@@ -110,12 +110,12 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="36dp"
+        android:tint="@color/color3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toEndOf="@+id/imag_calender"
         app:layout_constraintTop_toBottomOf="@+id/txt_details"
-        app:srcCompat="@drawable/alarm_icon"
-        android:tint="@color/color3"/>
+        app:srcCompat="@drawable/alarm_icon" />
 
     <TextView
         android:id="@+id/txt_calender"
@@ -159,15 +159,22 @@
         app:layout_constraintStart_toEndOf="@+id/spinner_txt1"
         app:layout_constraintTop_toBottomOf="@+id/txt_alarm" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_add_trip"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:background="#FFF9EF"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="56dp"
+        android:background="@color/color3"
+        android:text="@string/Add3"
+        android:textColor="@color/color4"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spinner_txt1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_txt1"
-        app:srcCompat="@drawable/btn_add_trip" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_txt1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

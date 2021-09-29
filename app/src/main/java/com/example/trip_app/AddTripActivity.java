@@ -10,9 +10,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,7 +43,7 @@ int t1Hour,t1Minute;
 private Spinner spinnertxt1;
 private Spinner spinnertxt2;
 EditText textTripName;
-ImageButton btnAddTrip;
+Button btnAddTrip;
 EditText startPoint;
 EditText endPoint;
  String apiKey="AIzaSyBtUmi_yFMSLHXfA5WmkdtUbvpkHwsZwcI";
@@ -145,6 +145,15 @@ EditText endPoint;
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnertxt2.setAdapter(adapter2);
 
+    btnAddTrip.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent listIntent = new Intent(AddTripActivity.this, List_view.class);
+
+            startActivity(listIntent);
+        }
+    });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -160,6 +169,8 @@ EditText endPoint;
             Status status= Autocomplete.getStatusFromIntent(data);
             Toast.makeText(getApplicationContext(),status.getStatusMessage(), Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
 
