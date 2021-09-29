@@ -1,20 +1,11 @@
 package com.example.trip_app;
 
-import static com.example.trip_app.R.id.search_start_point;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,28 +14,24 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.api.model.RectangularBounds;
-import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class AddTripActivity extends AppCompatActivity {
@@ -78,6 +65,8 @@ EditText endPoint;
         getSupportActionBar().hide();
 
         initComponnent();
+
+
     Places.initialize(getApplicationContext(),apiKey);
     PlacesClient placesClient=Places.createClient(AddTripActivity.this);
     final List<Place.Field> fieldList= Arrays.asList(Place.Field.ADDRESS,Place.Field.LAT_LNG,Place.Field.NAME);
@@ -102,9 +91,8 @@ EditText endPoint;
         }
     });
 
-    Calendar c = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
-
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
         imagcalender.setOnClickListener(new View.OnClickListener() {
@@ -180,14 +168,13 @@ EditText endPoint;
     {
         spinnertxt1=findViewById(R.id.spinner_txt1);
         spinnertxt2=findViewById(R.id.spinner_txt2);
-
         imagcalender=findViewById(R.id.imag_calender);
         txtcalender=findViewById(R.id.txt_calender);
         imagalarm=findViewById(R.id.imag_alarm);
         txtalarm=findViewById(R.id.txt_alarm);
         textTripName=findViewById(R.id.edit_trip_name);
         btnAddTrip=findViewById(R.id.btn_add_trip);
-startPoint=findViewById(R.id.search_start_point);
+        startPoint=findViewById(R.id.search_start_point);
         endPoint=findViewById(R.id.search_end_point);
     }
 }
