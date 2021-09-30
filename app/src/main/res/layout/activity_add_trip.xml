@@ -11,7 +11,7 @@
         android:id="@+id/txt_trip_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="30dp"
         android:text="@string/Trip_Name"
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="18sp"

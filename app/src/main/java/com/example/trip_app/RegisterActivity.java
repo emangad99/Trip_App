@@ -53,17 +53,6 @@ public class RegisterActivity extends AppCompatActivity {
         txtPass = findViewById(R.id.txtPass);
         txtPhone = findViewById(R.id.txtPhone);
         mAuth = FirebaseAuth.getInstance();
-
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-
-        setContentView(R.layout.activity_register);
-        getSupportActionBar().hide();
-
         txtlogin = findViewById(R.id.txt_login);
         txtlogin.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -29,16 +29,6 @@ EditText email,password;
         setContentView(R.layout.activity_main);
         email=findViewById(R.id.txtEmailLog);
         password=findViewById(R.id.txtPassLog);
-
-
-
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
         txtregister=findViewById(R.id.txt_register);
         btnlogin =findViewById(R.id.btn_login);
 

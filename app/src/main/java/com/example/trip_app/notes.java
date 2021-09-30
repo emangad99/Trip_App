@@ -19,15 +19,6 @@ Button btnadd;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-
-        setContentView(R.layout.activity_notes);
-        getSupportActionBar().hide();
-
         layout=findViewById(R.id.layout_list_addnotes);
         btnadd=findViewById(R.id.btn_add);
 
