@@ -148,9 +148,12 @@ EditText endPoint;
     btnAddTrip.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent listIntent = new Intent(AddTripActivity.this, List_view.class);
 
+            Intent listIntent = new Intent(AddTripActivity.this, List_view.class);
             startActivity(listIntent);
+            DataBaseAdapter db = new DataBaseAdapter(AddTripActivity.this);
+            db.insertData(new Date(textTripName.toString(),startPoint.toString(),endPoint.toString(),txtcalender.toString(),txtalarm.toString()));
+
         }
     });
 
