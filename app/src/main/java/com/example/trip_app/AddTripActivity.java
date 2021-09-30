@@ -151,6 +151,7 @@ EditText endPoint;
 
             Intent listIntent = new Intent(AddTripActivity.this, List_view.class);
             startActivity(listIntent);
+
             DataBaseAdapter db = new DataBaseAdapter(AddTripActivity.this);
             db.insertData(new Date(textTripName.toString(),startPoint.toString(),endPoint.toString(),txtcalender.toString(),txtalarm.toString()));
 

@@ -79,7 +79,6 @@ NavigationView navigationView;
             @Override
             public void onClick(View v) {
                Intent addIntent = new Intent (HomeActivity.this,AddTripActivity.class);
-
                startActivity(addIntent);
             }
         });
