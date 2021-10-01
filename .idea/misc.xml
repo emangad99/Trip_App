@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroideProject/Trip_App/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroideProject/Trip_App/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_add_trip.xml" value="0.1" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_home.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_list_view.xml" value="0.17708333333333334" />

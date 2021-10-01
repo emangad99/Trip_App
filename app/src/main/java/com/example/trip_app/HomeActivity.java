@@ -55,7 +55,7 @@ NavigationView navigationView;
                         startActivity(histintent);
                         break;
 
-                    case  R.id.nav_share:{
+                    case  R.id.nav_share:
 
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                         sharingIntent.setType("text/plain");
@@ -64,15 +64,19 @@ NavigationView navigationView;
                         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
                         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                         startActivity(Intent.createChooser(sharingIntent, "Share using"));
+                        break;
 
-                    }
-                    break;
+                    case R.id.nav_logout:
+                        startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                        break;
 
 
                 }
                 return false;
             }
         });
+
+
 
         imagadd=findViewById(R.id.img_add);
         imagadd.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +86,16 @@ NavigationView navigationView;
                startActivity(addIntent);
             }
         });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_logout:
+        }
+
+        return super.onOptionsItemSelected(item);
 
     }
 

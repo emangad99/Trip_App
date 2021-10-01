@@ -139,6 +139,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#FFF9EF"
         app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="Reg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPass"
         app:srcCompat="@drawable/btn_register" />
