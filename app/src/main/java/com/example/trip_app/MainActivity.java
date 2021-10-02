@@ -1,12 +1,15 @@
 package com.example.trip_app;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -15,10 +18,25 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.trip_app.databinding.ActivityMainBinding;
+import com.facebook.CallbackManager;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +45,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btnlogin;
+    ImageView btngoogle,btnfacebook;
     TextView txtregister;
     EditText name, password;
     CheckBox checkBox;
@@ -34,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public String PREFS_NAME = "prefs";
     public String PREFS_USERNAME = "prefsUsername";
     public String PREFS_PASSWORD = "prefsPassword";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +64,13 @@ public class MainActivity extends AppCompatActivity {
         txtregister = findViewById(R.id.txt_register);
         btnlogin = findViewById(R.id.btn_login);
         checkBox = findViewById(R.id.checkBox);
+        btngoogle=findViewById(R.id.btnGoogleLog);
+        btnfacebook=findViewById(R.id.btnFaceLog);
         SharedPreferences pref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         String userName = pref.getString(PREFS_USERNAME, "");
         String passWord = pref.getString(PREFS_PASSWORD, "");
+
 
 
         txtregister.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +132,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //login Google
+
+        btngoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentgoogle = new Intent(MainActivity.this,GoogleAuth.class);
+                intentgoogle.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intentgoogle);
+            }
+        });
+
+        //login Facebook
+
+        btnfacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentface = new Intent(MainActivity.this,FacebookAuth.class);
+                intentface.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intentface);
+
+            }
+        });
 
     }
+
 }
+
 

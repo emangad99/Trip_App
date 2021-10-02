@@ -22,4 +22,9 @@
     <string name="add2">+ Add Notes</string>
     <string name="welcome">Trip to \n freedom !</string>
     <string name="Add3">Add Trip</string>
+    <string name="name2">User Name</string>
+
+    <string name="facebook_app_id">399829851521929</string>
+    <string name="fb_login_protocol_scheme">fb399829851521929</string>
+
 </resources>

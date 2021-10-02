@@ -98,24 +98,24 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="36dp"
-        android:tint="@color/color3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_details"
-        app:srcCompat="@drawable/date_icon" />
+        app:srcCompat="@drawable/date_icon"
+        app:tint="@color/color3" />
 
     <ImageView
         android:id="@+id/imag_alarm"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="36dp"
-        android:tint="@color/color3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toEndOf="@+id/imag_calender"
         app:layout_constraintTop_toBottomOf="@+id/txt_details"
-        app:srcCompat="@drawable/alarm_icon" />
+        app:srcCompat="@drawable/alarm_icon"
+        app:tint="@color/color3" />
 
     <TextView
         android:id="@+id/txt_calender"

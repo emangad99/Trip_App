@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 ImageView imagadd;
@@ -21,6 +22,7 @@ DrawerLayout drawerLayout;
 ActionBarDrawerToggle toggle;
 Toolbar toolbar;
 NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,7 @@ NavigationView navigationView;
                startActivity(addIntent);
             }
         });
+
 
     }
 

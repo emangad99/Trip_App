@@ -36,8 +36,8 @@
         android:id="@+id/txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:text="@string/Email"
+        android:layout_marginTop="160dp"
+        android:text="@string/name2"
         android:textColor="@color/color3"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -160,29 +160,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/btnTwitterLog"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnGoogleLog"
-        app:srcCompat="@drawable/twitter_icon" />
-
-    <ImageView
-        android:id="@+id/btnFaceLog"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="92dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.27"
-        app:srcCompat="@drawable/icon_face" />
-
-    <ImageView
         android:id="@+id/btnGoogleLog"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -193,8 +170,31 @@
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toEndOf="@+id/btnFaceLog"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.27"
+        app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@drawable/icon_google" />
+
+    <ImageView
+        android:id="@+id/btnFaceLog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.08"
+        app:srcCompat="@drawable/icon_face" />
+
+    <ImageView
+        android:id="@+id/btnTwitterLog"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnGoogleLog"
+        app:srcCompat="@drawable/twitter_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
