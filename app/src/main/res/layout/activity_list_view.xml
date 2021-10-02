@@ -31,11 +31,11 @@
                     android:id="@+id/btn_notes"
                     android:layout_width="85dp"
                     android:layout_height="60dp"
-                    android:tint="@android:color/background_dark"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/btn_start"
-                    app:srcCompat="@drawable/notes_icon" />
+                    app:srcCompat="@drawable/notes_icon"
+                    app:tint="@android:color/background_dark" />
 
                 <Button
                     android:id="@+id/btn_start"
@@ -163,10 +163,10 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="16dp"
-                        android:tint="@android:color/background_dark"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/menu_icon" />
+                        app:srcCompat="@drawable/menu_icon"
+                        app:tint="@android:color/background_dark" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

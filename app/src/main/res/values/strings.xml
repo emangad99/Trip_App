@@ -26,5 +26,7 @@
 
     <string name="facebook_app_id">399829851521929</string>
     <string name="fb_login_protocol_scheme">fb399829851521929</string>
+    <string name="Notes">Notes :</string>
+    <string name="DeleteTrip">Delete Trip</string>
 
 </resources>

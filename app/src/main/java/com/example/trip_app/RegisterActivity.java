@@ -20,6 +20,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,6 +43,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     TextView txtlogin;
+    ImageView btngoogle,btnfacebook,btntwitter;
     EditText txtName, txtEmail, txtPhone, txtPass;
     FirebaseAuth mAuth;
     String pww = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-zA-Z])|(?=.{8,})(?=.*\\d)(?=.*[!@#$%^&])|(?=.{8,})(?=.*[a-zA-Z])(?=.*[!@#$%^&]).*$";
@@ -56,6 +58,8 @@ public class RegisterActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
         txtPass = findViewById(R.id.txtPass);
         txtPhone = findViewById(R.id.txtPhone);
+        btngoogle=findViewById(R.id.btnGoogleLog);
+        btnfacebook=findViewById(R.id.btnFaceLog);
         mAuth = FirebaseAuth.getInstance();
         txtlogin = findViewById(R.id.txt_login);
         txtlogin.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +69,27 @@ public class RegisterActivity extends AppCompatActivity {
                 Intent loginIntent = new Intent(RegisterActivity.this, MainActivity.class);
 
                 startActivity(loginIntent);
+            }
+        });
+
+        btngoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentgoogle = new Intent(RegisterActivity.this,GoogleAuth.class);
+                intentgoogle.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intentgoogle);
+            }
+        });
+
+        //login Facebook
+
+        btnfacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentface = new Intent(RegisterActivity.this,FacebookAuth.class);
+                intentface.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intentface);
+
             }
         });
 

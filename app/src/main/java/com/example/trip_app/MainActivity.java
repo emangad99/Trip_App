@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.trip_app.databinding.ActivityMainBinding;
 import com.facebook.CallbackManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -45,7 +44,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btnlogin;
-    ImageView btngoogle,btnfacebook;
+    ImageView btngoogle,btnfacebook,btntwitter;
     TextView txtregister;
     EditText name, password;
     CheckBox checkBox;
@@ -66,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         checkBox = findViewById(R.id.checkBox);
         btngoogle=findViewById(R.id.btnGoogleLog);
         btnfacebook=findViewById(R.id.btnFaceLog);
+        btntwitter=findViewById(R.id.btnTwitterLog);
         SharedPreferences pref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         String userName = pref.getString(PREFS_USERNAME, "");
@@ -154,6 +154,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        //login twitter
+       /* btntwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenttwitter = new Intent(MainActivity.this,TwitterActivity.class);
+                intenttwitter.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intenttwitter);
+            }
+        });
+
+        */
+
 
     }
 
