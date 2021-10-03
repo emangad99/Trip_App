@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //login twitter
-       /* btntwitter.setOnClickListener(new View.OnClickListener() {
+        btntwitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intenttwitter = new Intent(MainActivity.this,TwitterActivity.class);
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        */
+
 
 
     }
