@@ -60,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtPhone = findViewById(R.id.txtPhone);
         btngoogle=findViewById(R.id.btnGoogleLog);
         btnfacebook=findViewById(R.id.btnFaceLog);
+        btntwitter=findViewById(R.id.btnTwitterLog);
         mAuth = FirebaseAuth.getInstance();
         txtlogin = findViewById(R.id.txt_login);
         txtlogin.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +91,15 @@ public class RegisterActivity extends AppCompatActivity {
                 intentface.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intentface);
 
+            }
+        });
+
+        btntwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenttwitter = new Intent(RegisterActivity.this,TwitterActivity.class);
+                intenttwitter.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intenttwitter);
             }
         });
 
