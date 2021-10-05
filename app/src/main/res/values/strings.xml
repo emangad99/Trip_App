@@ -28,5 +28,7 @@
     <string name="fb_login_protocol_scheme">fb399829851521929</string>
     <string name="Notes">Notes :</string>
     <string name="DeleteTrip">Delete Trip</string>
+    <string name="to">To</string>
+    <string name="from">From</string>
 
 </resources>

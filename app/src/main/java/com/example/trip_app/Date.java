@@ -1,4 +1,3 @@
-
 package com.example.trip_app;
 
 import android.widget.EditText;
@@ -10,9 +9,11 @@ public class Date {
     private  String ENDPOINT;
     private  String DATE;
     private  String TIME;
+   // private  String TRIPREMENDIER;
+  //  private  String TRIPTYPE;
 
 
-    public Date(long ID,String tripName, String startpoint, String endpoint, String DATE, String TIME)
+    public Date(long ID,String tripName, String startpoint, String endpoint, String DATE, String TIME )
     {
         this.ID=ID;
         this.TRIPNAME=tripName;
@@ -20,6 +21,9 @@ public class Date {
         this.ENDPOINT=endpoint;
         this.DATE=DATE;
         this.TIME=TIME;
+       // this.TRIPREMENDIER=tRIPREMENDIER;
+       // this.TRIPTYPE=tRIPTYPE;
+
     }
 
     public Date(String TRIPNAME,String STARTPOINT, String ENDPOINT,String DATE,String TIME)
@@ -29,9 +33,13 @@ public class Date {
         this.ENDPOINT=ENDPOINT;
         this.DATE=DATE;
         this.TIME=TIME;
+       // this.TRIPREMENDIER=TRIPREMENDIER;
+      //  this.TRIPTYPE=TRIPTYPE;
     }
 
+    public Date() {
 
+    }
 
 
     public long getID()
@@ -59,7 +67,8 @@ public class Date {
     {
         return DATE;
     }
-
+ //   public String getTRIPREMENDIER(){return TRIPREMENDIER;}
+//public  String getTRIPTYPE(){return TRIPTYPE;}
     public void setID(long ID)
     {
         this.ID = ID;
@@ -85,4 +94,6 @@ public class Date {
     {
         this.TIME= TIME;
     }
+    //public void  setTRIPREMENDIER(String TRIPREMENDIER){this.TRIPREMENDIER=TRIPREMENDIER;}
+   /* public void setTRIPTYPE(String TRIPTYPE){this.TRIPTYPE=TRIPTYPE;}*/
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -12,9 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 ImageView imagadd;
@@ -22,6 +28,7 @@ DrawerLayout drawerLayout;
 ActionBarDrawerToggle toggle;
 Toolbar toolbar;
 NavigationView navigationView;
+RecyclerView recyclerView;
 
 
     @Override
@@ -37,6 +44,12 @@ NavigationView navigationView;
         drawerLayout.addDrawerListener(toggle);
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
+        recyclerView=findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager( new LinearLayoutManager(HomeActivity.this));
+        DataBaseAdapter db=new DataBaseAdapter(this);
+        List<Date> date = db.getAlldata();
+        Adapter adapter = new Adapter(HomeActivity.this, (ArrayList<Date>) date);
+        recyclerView.setAdapter(adapter);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
@@ -90,6 +103,9 @@ NavigationView navigationView;
         });
 
 
+
+
+
     }
 
     @Override
@@ -102,15 +118,7 @@ NavigationView navigationView;
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START))
-        {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }else{
-        super.onBackPressed();
-        }
-    }
+
 
 
 }

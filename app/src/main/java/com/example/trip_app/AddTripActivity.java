@@ -29,6 +29,7 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.protobuf.Empty;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -46,39 +47,28 @@ EditText textTripName;
 Button btnAddTrip;
 EditText startPoint;
 EditText endPoint;
- String apiKey="AIzaSyBtUmi_yFMSLHXfA5WmkdtUbvpkHwsZwcI";
+
 
 
 @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_trip);
+
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
+
+        setContentView(R.layout.activity_add_trip);
+
+        getSupportActionBar().hide();
+
         initComponnent();
 
 
-    Places.initialize(getApplicationContext(),apiKey);
-    PlacesClient placesClient=Places.createClient(AddTripActivity.this);
-    final List<Place.Field> fieldList= Arrays.asList(Place.Field.ADDRESS,Place.Field.LAT_LNG,Place.Field.NAME);
-    startPoint.setFocusable(false);
-    startPoint.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
 
-            Intent intent=new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY,fieldList).build(AddTripActivity.this);
-            startActivityForResult(intent,100);
-
-        }
-    });
-    endPoint.setFocusable(false);
-    endPoint.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-            Intent intent=new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY,fieldList).build(AddTripActivity.this);
-            startActivityForResult(intent,100);
-
-        }
-    });
 
         Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
@@ -137,37 +127,43 @@ EditText endPoint;
     btnAddTrip.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            String name = textTripName.getText().toString();
+            String start = startPoint.getText().toString();
+            String end = endPoint.getText().toString();
+            String data = txtcalender.getText().toString();
+            String time = txtalarm.getText().toString();
+            if (!name.isEmpty()) {
 
-            Intent listIntent = new Intent(AddTripActivity.this, List_view.class);
-            startActivity(listIntent);
 
-            DataBaseAdapter db = new DataBaseAdapter(AddTripActivity.this);
-            db.insertData(new Date(textTripName.toString(),startPoint.toString(),endPoint.toString(),txtcalender.toString(),txtalarm.toString()));
+                if (start.isEmpty()) {
+                    Toast.makeText(AddTripActivity.this, "enter start point", Toast.LENGTH_SHORT).show();
+                }
+                if (end.isEmpty()) {
+                    Toast.makeText(AddTripActivity.this, "enter end point", Toast.LENGTH_SHORT).show();
+                }
+                if (data.isEmpty()) {
+                    Toast.makeText(AddTripActivity.this, "enter data", Toast.LENGTH_SHORT).show();
+                }
+                if (time.isEmpty()) {
+                    Toast.makeText(AddTripActivity.this, "enter time", Toast.LENGTH_SHORT).show();
+                } else {
+                    Date date = new Date(textTripName.getText().toString(), startPoint.getText().toString(), endPoint.getText().toString(), txtcalender.getText().toString(), txtalarm.getText().toString());
+                    DataBaseAdapter db = new DataBaseAdapter(AddTripActivity.this);
+                    db.insertData(date);
+                    Toast.makeText(AddTripActivity.this, "saved", Toast.LENGTH_SHORT).show();
+                    goToMain();
 
+                }
+            }
+        }
+
+        private void goToMain() {
+            Intent i=new Intent(AddTripActivity.this,HomeActivity.class);
+            startActivity(i);
         }
     });
 
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==100&& resultCode==RESULT_OK)
-        {
-            Place place=Autocomplete.getPlaceFromIntent(data);
-            startPoint.setText(place.getAddress());
-            endPoint.setText(place.getAddress());
-        }
-        else if(resultCode== AutocompleteActivity.RESULT_ERROR)
-        {
-            Status status= Autocomplete.getStatusFromIntent(data);
-            Toast.makeText(getApplicationContext(),status.getStatusMessage(), Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
-
-
-
     private void initComponnent()
     {
         spinnertxt1=findViewById(R.id.spinner_txt1);
