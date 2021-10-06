@@ -22,7 +22,7 @@
             android:background="#FFF9EF"
             >
 
-            <Button
+            <ImageView
                 android:id="@+id/btn_start"
                 android:layout_width="235dp"
                 android:layout_height="58dp"

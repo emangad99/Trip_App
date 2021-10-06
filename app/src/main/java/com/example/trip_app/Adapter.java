@@ -1,7 +1,9 @@
 package com.example.trip_app;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
@@ -85,6 +88,31 @@ ImageView btnnotes,btnstart,btnmenu;
 
                 }
             });
+            btnstart=itemView.findViewById(R.id.btn_start);
+            btnstart.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String sStartpoint=nstartpoint.getText().toString().trim();
+                            String sEndpoint=nendpoint.getText().toString().trim();
+                            try{
+
+                                Uri uri= Uri.parse("https://www.google.co.in/maps/dir/"+sStartpoint+"/"+sEndpoint);
+                                Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+                                intent.setPackage("com.google.android.apps.maps");
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                               v.getContext().startActivity(intent);
+
+                            }catch (ActivityNotFoundException e)
+                            {
+
+                                Uri uri=Uri.parse("https://play.google.com/store/apps/details?id=com.goole.android.apps.maps");
+                                Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                v.getContext().startActivity(intent);
+                            }
+                        }
+            });
+
         }
 
         @Override
@@ -99,5 +127,11 @@ ImageView btnnotes,btnstart,btnmenu;
         }
     }
 
+
+
+
 }
+
+
+
 
