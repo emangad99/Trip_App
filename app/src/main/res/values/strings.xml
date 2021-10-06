@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Trip</string>
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="check1">Remember me</string>

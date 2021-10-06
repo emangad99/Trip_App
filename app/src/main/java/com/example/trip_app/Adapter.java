@@ -2,6 +2,7 @@ package com.example.trip_app;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
@@ -14,10 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +39,9 @@ class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
 
-
-    @NonNull
+    @NotNull
     @Override
-    public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Adapter.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View view=inflater.inflate(R.layout.activity_list_view2,parent,false);
 
         ViewHolder viewHolder = new ViewHolder(view);
@@ -46,7 +49,7 @@ class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NotNull Adapter.ViewHolder holder, int position) {
   String title=date.get(position).getTRIPNAME();
   String startpoint=date.get(position).getSTARTPOINT();
   String endpoint=date.get(position).getENDPOINT();
@@ -57,19 +60,19 @@ class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
   holder.nendpoint.setText(endpoint);
   holder.ntime.setText(time);
   holder.ndata.setText(data);
-    }
+  }
 
     @Override
     public int getItemCount() {
         return date.size();
     }
-    public  class  ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener
+    public  class  ViewHolder extends RecyclerView.ViewHolder
     {
         private  static final  String TAG="MyViewHolder";
         TextView nnametrip,nstartpoint,nendpoint,ntime,ndata;
 
-ImageView btnnotes,btnstart,btnmenu;
-        public ViewHolder(@NonNull View itemView) {
+        ImageView btnnotes,btnstart,btndelete,btnedit,btnaddnotes;
+        public ViewHolder(@NotNull View itemView) {
             super(itemView);
 
             nnametrip=itemView.findViewById(R.id.nTitle);
@@ -77,15 +80,21 @@ ImageView btnnotes,btnstart,btnmenu;
             nendpoint=itemView.findViewById(R.id.nEndpoint);
             ntime=itemView.findViewById(R.id.nTime);
             ndata=itemView.findViewById(R.id.nDate);
-            btnmenu=itemView.findViewById(R.id.btn_menu);
-            btnmenu.setOnClickListener(this);
             btnnotes=itemView.findViewById(R.id.btn_notes);
             btnnotes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                 Intent intent =new Intent(v.getContext(),notes.class);
-                 v.getContext().startActivity(intent);
 
+
+                }
+            });
+
+            btnaddnotes=itemView.findViewById(R.id.btn_add_notes);
+            btnaddnotes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent =new Intent(v.getContext(),notes.class);
+                    v.getContext().startActivity(intent);
                 }
             });
             btnstart=itemView.findViewById(R.id.btn_start);
@@ -113,24 +122,37 @@ ImageView btnnotes,btnstart,btnmenu;
                         }
             });
 
+            btndelete=itemView.findViewById(R.id.btn_delete);
+            btndelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(inflater.getContext()).setTitle("Delete Trip")
+                            .setMessage("Are you sure want to delete ?").setIcon(R.drawable.ic__delete).setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    date.remove(getAdapterPosition());
+                                    notifyItemRemoved(getAdapterPosition());
+
+
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                    builder.show();
+                }
+            });
         }
 
-        @Override
-        public void onClick(View v) {
-            Showmenu(v);
+
         }
-        private  void Showmenu(View view)
-        {
-            PopupMenu popupMenu=new PopupMenu(view.getContext(),view);
-            popupMenu.inflate(R.menu.menu_details);
-            popupMenu.show();
-        }
+
+
+
     }
-
-
-
-
-}
 
 
 
