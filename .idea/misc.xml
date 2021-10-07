@@ -11,8 +11,12 @@
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_list_view.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_list_view2.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_notes.xml" value="0.265625" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_twitter.xml" value="0.24728260869565216" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_update.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_update_trip.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/row_add_linear.xml" value="0.265625" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/menu/menu_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_add_trip.xml" value="0.1" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_home.xml" value="0.12771739130434784" />
@@ -33,7 +37,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

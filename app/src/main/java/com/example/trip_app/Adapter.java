@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,6 +71,7 @@ class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     {
         private  static final  String TAG="MyViewHolder";
         TextView nnametrip,nstartpoint,nendpoint,ntime,ndata;
+        EditText editText;
 
         ImageView btnnotes,btnstart,btndelete,btnedit,btnaddnotes;
         public ViewHolder(@NotNull View itemView) {
@@ -81,9 +83,39 @@ class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             ntime=itemView.findViewById(R.id.nTime);
             ndata=itemView.findViewById(R.id.nDate);
             btnnotes=itemView.findViewById(R.id.btn_notes);
+            editText =itemView.findViewById(R.id.edit_add_notes);
             btnnotes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(inflater.getContext());
+                    builder.setTitle("Notes");
+
+
+                    final TextView show = new TextView(inflater.getContext());
+                    show.setText(nnametrip.getText().toString());
+                    show.setTextSize(18);
+
+
+
+
+                    builder.setView(show);
+
+                    builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                    builder.show();
+
 
 
                 }
@@ -143,6 +175,16 @@ class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                                 }
                             });
                     builder.show();
+                }
+            });
+
+            btnedit = itemView.findViewById(R.id.btn_edit);
+            btnedit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent2 =new Intent(v.getContext(),update.class);
+                    v.getContext().startActivity(intent2);
+
                 }
             });
         }

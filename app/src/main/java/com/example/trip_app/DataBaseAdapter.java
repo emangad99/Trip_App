@@ -3,6 +3,7 @@ package com.example.trip_app;
 
 
 import static com.example.trip_app.Helper.KEY_ID;
+import static com.example.trip_app.Helper.TABLE_NAME;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -79,5 +80,22 @@ public class DataBaseAdapter {
          }while (c.moveToNext());
      }
 return dates;
+    }
+
+    public long updateData(Date data){
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Helper.TRIP_NAME,data.getTRIPNAME());
+        contentValues.put(Helper.START_POINT,data.getSTARTPOINT());
+        contentValues.put(Helper.END_POINT,data.getENDPOINT());
+        contentValues.put(Helper.DATE,data.getDATE());
+        contentValues.put(Helper.TIME,data.getTIME());
+
+        long ID = db.update(Helper.TABLE_NAME,contentValues,"ID = ?",new String[]{});
+        return ID;
+
+
+
     }
 }

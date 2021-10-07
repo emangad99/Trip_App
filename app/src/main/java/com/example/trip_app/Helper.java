@@ -4,13 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
 public class Helper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "datas";
+    public static final String DATABASE_NAME = "data1";
     public static final int DATABASE_VERSION = 2;
-    public static final String TABLE_NAME = "data_trips";
+    public static final String TABLE_NAME = "data_trip1";
     public static final String KEY_ID = "key_id";
     public static final String TRIP_NAME = "trip_name";
     public static final String START_POINT = "start_point";
