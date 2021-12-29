@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/drawable/logout_icon.xml" value="0.2546875" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_add_trip.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_facebook_auth.xml" value="0.23385416666666667" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_google_auth.xml" value="0.21979166666666666" />
@@ -16,8 +17,12 @@
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_twitter.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_update.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_update_trip.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_welcome.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/header.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/layout/row_add_linear.xml" value="0.265625" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/menu/main_menu.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/menu/menu_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Eman/AndroidStudioProjects/Trip_App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2546875" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_add_trip.xml" value="0.1" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_home.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/elkapashi/AndroidStudioProjects/Trip_App/app/src/main/res/layout/activity_list_view.xml" value="0.17708333333333334" />

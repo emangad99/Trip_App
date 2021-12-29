@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Helper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "data1";
+    public static final String DATABASE_NAME = "data2";
     public static final int DATABASE_VERSION = 2;
-    public static final String TABLE_NAME = "data_trip1";
+    public static final String TABLE_NAME = "data_trip2";
     public static final String KEY_ID = "key_id";
     public static final String TRIP_NAME = "trip_name";
     public static final String START_POINT = "start_point";
